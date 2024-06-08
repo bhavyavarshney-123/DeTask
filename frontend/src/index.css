@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('./assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/roboto-regular-webfont.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: darkblue;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  background: #eee;
+}
+.middle{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  background-color:#f2f2f2
+}
+/* Header */
+.nav-sections {
+   min-height: 60px; 
+  
+  background:  white;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo-section {
+  margin-left: 100px;
+}
+
+.ctas {
+  display: flex;
+  gap: 20px;
+  justify-self: flex-end;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.signup-btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.signin-btn {
+  color: black;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+footer {
+   padding-top: 10px; 
+  flex: 0 0 5%;
+  max-width: 1000px;
+margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Banner */
+.ban-container {
+  width: 100%;
+  display: flex;
+}
+
+.banner {
+  display: flex;
+  gap: 12px;
+  background: rgb(53, 53, 53);
+  color: white;
+  justify-content: center;
+  padding: 3px 0px;
+}

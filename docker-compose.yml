@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs
+    ports:
+      - 5001:5001
+    volumes:
+      - ipfs_data:/data/ipfs
+    environment:
+      IPFS_PROFILE: server
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    depends_on:
+      - ipfs
+    environment:
+      - IPFS_API_URL=http://ipfs:5001
+    ports:
+      - 1001:1001
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 5173:5173
+
+volumes:
+  ipfs_data:
